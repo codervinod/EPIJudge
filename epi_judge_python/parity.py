@@ -21,7 +21,6 @@ def compute_cache():
 
 def parity(x):
     # TODO - you fill in here.
-    compute_cache()
     p = (CACHED_PARITY[x & 0xFFFF]) ^ (
             CACHED_PARITY[(x >> 16) & 0xFFFF]) ^ (
             CACHED_PARITY[(x >> 32) & 0xFFFF]) ^ (
@@ -30,4 +29,6 @@ def parity(x):
 
 
 if __name__ == '__main__':
+    compute_cache()
+
     exit(generic_test.generic_test_main("parity.py", 'parity.tsv', parity))
